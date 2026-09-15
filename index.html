@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Passion Word Counter</title>
+  <style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background: radial-gradient(circle, #6A0572, #4B0268);
+    color: #FFD700; /* Bright yellow for text */
+  }
+  
+  h1 {
+    color: #FFD700; /* Yellow for the title */
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 5px #3A003A;
+  }
+  
+  p {
+    color: #FFFFFF; 
+  }
+  
+  input, button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+  }
+  
+  /* Passion fruit colors for buttons */
+  button {
+    background-color: #4B0268;
+    color: #FFD700;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px #3A003A;
+  }
+  
+  button:hover {
+    background-color: #6A0572;
+  }
+  
+  input[type="text"] {
+    border: 2px solid #FFD700;
+    border-radius: 5px;
+    background-color: #4B0268;
+    color: #FFD700;
+  }
+  
+  .result {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #FFD700;
+    text-shadow: 1px 1px 3px #3A003A;
+  }
+
+  .result.error {
+    color: #FFB3B3;
+  }
+  
+  /* Style for the passion fruit image */
+  img {
+    margin-top: 20px;
+    width: 100px;
+    border-radius: 50%;
+    border: 3px solid #FFD700;
+    box-shadow: 0px 0px 15px #FFD700;
+  }
+  </style>
+</head>
+<body>
+  <h1>Passionfruit</h1>
+  <p> Just to count how many times one mentions their passion on their Portfolio </p>
+  <p>Select a file or enter a URL to analyze:</p>
+  
+  <div>
+    <input type="file" id="fileInput" accept=".txt,.pdf">
+    <button onclick="analyzeFile()">Analyze File</button>
+  </div>
+  
+  <div style="margin-top: 20px;">
+    <input type="text" id="urlInput" placeholder="Enter URL">
+    <button onclick="analyzeURL()">Analyze URL</button>
+  </div>
+
+  <div class="result" id="result">Passion: 0, Passionate: 0</div>
+  
+  <img id="passionImage" src="TheFruit.png" alt="Passion Fruit" style="display: none;">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
